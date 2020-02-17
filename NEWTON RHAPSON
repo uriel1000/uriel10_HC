@@ -1,0 +1,35 @@
+include <stdio.h>
+#include <math.h>
+#include <stdlib.h>
+#de(ne error 0.001
+int main ()
+{  
+int i=0;  
+8oat ea=100,x=0,temp, xi=3;  
+centrartexto("Metodo de Newton-Raphson",3);  
+centrartexto("Encontrar la raiz para la funcion:  f(x) = e^(-x) - x", wherey()+2);
+centrartexto("Con un error de 0.0001", wherey()+2); 
+gotoxy(20,wherey()+3); 
+prin@("#       X             XI               |Ea| \n\n\n"); 
+do  
+{      gotoxy(20,wherey())
+;      prin@("%d",i);
+gotoxy(27,wherey()); 
+prin@("%.8f",x);  
+gotoxy(40,wherey());  
+xi = x - (exp(-x) - 1) / (-exp(-x) - 1);  
+prin@("%.10f",xi); 
+gotoxy(55,wherey());   
+if (i==0)prin@("------");  
+else {ea = fabs(((xi-temp)/xi)*100);prin@("%.7f",ea); 
+}     
+temp=x; 
+x=xi;    
+i++;    
+prin@("\n");   
+} 
+while(ea > error);
+gotoxy(25,wherey()+3); 
+prin@("La raiz de la funcion es: %.10f",temp); 
+getch();  
+return 0; }
